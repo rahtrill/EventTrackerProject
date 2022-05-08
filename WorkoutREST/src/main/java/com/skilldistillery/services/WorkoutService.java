@@ -8,4 +8,8 @@ public interface WorkoutService {
 	
 	List<Workout> index();
 	
+	Workout findById(int id);
+	
+	Workout addWorkout(Workout workout);
+	
 }

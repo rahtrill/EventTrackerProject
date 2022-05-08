@@ -45,8 +45,21 @@ class WorkoutTest {
 	@Test
 	@DisplayName("Workout entity mapping")
 	void test() {
+		
+//		+----+---------------------+--------+----------+------+------+-----------------+-------------+---------------------------------------------+
+//		| id | date                | type   | duration | sets | reps | calories_burned | body_weight | details                                     |
+//		+----+---------------------+--------+----------+------+------+-----------------+-------------+---------------------------------------------+
+//		|  1 | 2022-05-05 00:00:00 | Cardio |       45 |    3 |   10 |            NULL |         186 | I ran half a mile further thna usual today. |
+//		+----+---------------------+--------+----------+------+------+-----------------+-------------+---------------------------------------------+
+		
 		assertNotNull(workout);
 		assertEquals("Cardio", workout.getType());
+		assertEquals(45, workout.getDuration());
+		assertEquals(3, workout.getSets());
+		assertEquals(10, workout.getReps());
+		assertEquals(null, workout.getCaloriesBurned());
+		assertEquals(186, workout.getBodyWeight());
+		assertEquals("I ran half a mile further thna usual today.", workout.getDetails());
 	}
 
 }

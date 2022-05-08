@@ -8,7 +8,7 @@
     
     <!-- Begin Entities Here -->
     
-    <class>com.skilldistillery.xtreme.entities.Workout</class>
+    <class>com.skilldistillery.entities.Workout</class>
     
     <!-- End Entities Here -->
     
