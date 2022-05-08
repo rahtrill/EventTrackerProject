@@ -12,5 +12,5 @@ public interface WorkoutRepository extends JpaRepository<Workout, Integer>{
 	List<Workout> findByDate(LocalDate date);
 	
 	List<Workout> findByType(String type);
-
+	
 }

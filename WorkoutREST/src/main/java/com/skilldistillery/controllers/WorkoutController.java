@@ -61,5 +61,5 @@ public class WorkoutController {
 	public List<Workout> getByType(@PathVariable String type) {
 		return service.getByType(type);
 	}
-
+	
 }
