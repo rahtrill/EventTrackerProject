@@ -1,5 +1,6 @@
 package com.skilldistillery.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,6 +52,16 @@ public class WorkoutServiceImpl implements WorkoutService {
 	@Override
 	public void removeWorkout(int id) {
 		repo.delete(findById(id));
+	}
+
+	@Override
+	public List<Workout> getByDate(LocalDate date) {
+		return repo.findByDate(date);
+	}
+
+	@Override
+	public List<Workout> getByType(String type) {
+		return repo.findByType(type);
 	}
 	
 }
