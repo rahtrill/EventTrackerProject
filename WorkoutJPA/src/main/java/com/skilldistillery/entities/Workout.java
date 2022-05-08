@@ -1,5 +1,6 @@
 package com.skilldistillery.entities;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -15,6 +16,7 @@ public class Workout {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	private LocalDate date;
 	private String type;
 	private int duration;
 	private Integer sets;
@@ -43,6 +45,14 @@ public class Workout {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
 	public int getDuration() {

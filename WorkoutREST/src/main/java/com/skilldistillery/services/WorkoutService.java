@@ -12,4 +12,8 @@ public interface WorkoutService {
 	
 	Workout addWorkout(Workout workout);
 	
+	Workout updateWorkout(Workout workout, int id);
+	
+	void removeWorkout(int id);
+	
 }

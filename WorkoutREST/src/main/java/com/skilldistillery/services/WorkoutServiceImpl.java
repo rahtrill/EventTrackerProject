@@ -36,5 +36,21 @@ public class WorkoutServiceImpl implements WorkoutService {
 	public Workout addWorkout(Workout workout) {
 		return repo.save(workout);
 	}
+
+	@Override
+	public Workout updateWorkout(Workout workout, int id) {
+		
+		if (id > 0) {
+			workout.setId(id);
+			return repo.save(workout);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void removeWorkout(int id) {
+		repo.delete(findById(id));
+	}
 	
 }
