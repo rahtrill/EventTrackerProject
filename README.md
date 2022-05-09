@@ -34,4 +34,8 @@ These are all of the necessary technologies needed to make this program run:
 - Gradle
 - JUnit 5
 
-# What was the most difficult part of this project?s
+# What was the most difficult part of this project?
+
+The most difficult part of this project was creating the specific mappings for each of the functions I needed for this project.
+
+The use of services and repositories in this project were fairly easy to understand, the main REST Controller methods were hard to come up with at times, but I was able to come up with the needed mappings eventually.
