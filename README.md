@@ -26,4 +26,12 @@ A user might want to see all of their workouts on a particular day, so they shou
 
 # Technologies Used
 
+These are all of the necessary technologies needed to make this program run:
+
+- RESTful API
+- Spring Boot
+- Postman
+- Gradle
+- JUnit 5
+
 # What was the most difficult part of this project?s
