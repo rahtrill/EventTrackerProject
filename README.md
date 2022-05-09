@@ -15,10 +15,14 @@ Here is a table that demonstrates all of the mapping that occurs in this project
 | POST      | `/api/workouts`      | Representation of a new _workout_ resource | Description of the result of the operation | **Create** endpoint |
 | PUT       | `/api/workouts/1`   | Representation of a new version of _workout_ `1` | | **Replace** endpoint |
 | DELETE    | `/api/workouts/1`   |              | | **Delete** route |
-| GET       | `/api/workouts/search/date/2022-05-07`   |              | Collection of representations of all _workout_ resources by date '2022-05-07' | **Retrieve** endpoint |
-| GET       | `/api/workouts/search/type/cardio`   |              | Collection of representations of all _workout_ resources by type 'Cardio' | **Retrieve** endpoint |
+| GET       | `/api/workouts/search/date/2022-05-07`   |              | Collection of representations of all _workout_ resources by date '2022-05-07' | **List** or **collection** endpoint |
+| GET       | `/api/workouts/search/type/cardio`   |              | Collection of representations of all _workout_ resources by type 'Cardio' | **List** or **collection** endpoint |
 
 # Lessons Learned
+
+It was a bit challenging to come up with all of the possible URIs that could occur in the application once a front-end is implemented. However, after planning out and explaining the purpose of the mappings in English to myself, it became very clear that finding certain workouts should occur with different data to search with.
+
+A user might want to see all of their workouts on a particular day, so they should be able to search by date. A user might want to see all of the workouts they performed of the same type, so they should be able to search by type.
 
 # Technologies Used
 
