@@ -40,6 +40,7 @@ function aggregateData() {
 			if (xhr.status === 200) {
 				let workouts = JSON.parse(xhr.responseText);
 				minutesSpent(workouts);
+				totalCalories(workouts);
 				highestReps(workouts);
 				highestWeight(workouts);
 				lowestWeight(workouts);
@@ -61,6 +62,17 @@ function minutesSpent(workouts) {
 	}
 	
 	display.textContent = "Total minutes spent working out: " + totalMinutes + " minutes";
+}
+
+function totalCalories(workouts) {
+	let totalCalories = 0;
+	let display = document.getElementById("totalCalories");
+	
+	for (let workout of workouts) {
+		totalCalories += workout.caloriesBurned;
+	}
+	
+	display.textContent = "Total calories burned: " + totalCalories + " calories";
 }
 
 function highestReps(workouts) {
