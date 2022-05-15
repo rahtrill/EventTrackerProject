@@ -94,6 +94,46 @@ function highestReps(workouts) {
 	display.textContent = "Highest amount of reps performed in one workout: " + highestReps + " reps from the " + highestWorkout.type + " workout on " + highestWorkout.date;
 }
 
+function highestWeight(workouts) {
+	let highestWorkout = workouts[0];
+	let highestWeight = workouts[0].bodyWeight;
+	let display = document.getElementById("highestWeight");
+	
+	for (let workout of workouts) {
+		let weight = workout.bodyWeight;
+		
+		if (weight > highestWeight && weight !== null) {
+			highestWorkout = workout;
+			highestWeight = weight;
+		} else if (weight === highestWeight && weight !== null) {
+			highestWorkout = workout;
+			highestWeight = weight;
+		}
+	}
+	
+	display.textContent = "Your top weight: " + highestWeight + " lbs on " + highestWorkout.date;
+}
+
+function lowestWeight(workouts) {
+	let lowestWorkout = workouts[0];
+	let lowestWeight = workouts[0].bodyWeight;
+	let display = document.getElementById("lowestWeight");
+	
+	for (let workout of workouts) {
+		let weight = workout.bodyWeight;
+		
+		if (weight < lowestWeight && weight !== null) {
+			lowestWorkout = workout;
+			lowestWeight = weight;
+		} else if (weight === lowestWeight && weight !== null) {
+			lowestWorkout = workout;
+			lowestWeight = weight;
+		}
+	}
+	
+	display.textContent = "Your lowest weight: " + lowestWeight + " lbs on " + lowestWorkout.date;
+}
+
 function createForm(e) {
 	let form = e.target.parentElement;
 	let workout = {};
@@ -113,7 +153,8 @@ function createForm(e) {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 201 || xhr.status === 200) {
 				let newWorkout = JSON.parse(xhr.responseText);
-				displayWorkout(newWorkout);
+				loadAll();
+				aggregateData();
 			} else {
 				console.log("Workout not found");
 			}
@@ -154,6 +195,11 @@ function displayWorkout(workout) {
 }
 
 function displayWorkouts(workouts) {
+	let existing = document.getElementById("workoutTable");
+	if (existing !== null) {
+		existing.remove();
+	}
+	
 	let table = document.createElement("table");
 	table.id = "workoutTable";
 	let thead = document.createElement("thead");
