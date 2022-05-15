@@ -11,6 +11,7 @@ function init() {
 	console.log("in init()");
 	
 	loadAll();
+	aggregateData();
 }
 
 function loadAll() {
@@ -29,6 +30,37 @@ function loadAll() {
 	}
 
 	xhr.send();
+}
+
+function aggregateData() {
+	let xhr = new XMLHttpRequest();
+	xhr.open("GET", "api/workouts");
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				let workouts = JSON.parse(xhr.responseText);
+				minutesSpent(workouts);
+				highestReps(workouts);
+				highestWeight(workouts);
+				lowestWeight(workouts);
+			} else {
+				console.log("Workout list not found");
+			}
+		}
+	}
+
+	xhr.send();
+}
+
+function minutesSpent(workouts) {
+	let totalMinutes = 0;
+	let display = document.getElementById("minutesSpent");
+	
+	for (let workout of workouts) {
+		totalMinutes += workout.duration;
+	}
+	
+	display.textContent = "Total minutes spent working out: " + totalMinutes + " minutes";
 }
 
 function createForm(e) {

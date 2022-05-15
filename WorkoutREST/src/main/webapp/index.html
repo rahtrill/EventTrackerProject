@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-   
-   <h1>Workout Tracker</h1>
-   
-   <h2>Enter Your Workout</h2>
-   
-   <form name="createForm">
-   		<input name="date" type="date" placeholder="Workout Date"/>
-   		<br>
-   		<input name="type" type="text" placeholder="Workout Type"/>
-   		<br>
-   		<input name="duration" type="text" placeholder="Workout Duration (minutes)"/>
-   		<br>
-   		<input name="sets" type="text" placeholder="Sets (Optional)"/>
-   		<br>
-   		<input name="reps" type="text" placeholder="Reps"/>
-   		<br>
-   		<input name="caloriesBurned" type="text" placeholder="Calories Burned (Optional)"/>
-   		<br>
-   		<input name="bodyWeight" type="text" placeholder="Body Weight (Optional))"/>
-   		<br>
-   		<input name="details" type="text" placeholder="Details (Optional)"/>
-   		<br>
-   		<button name="submit">Submit</button>
-   </form>
-  
-    <script src="js/eventFunctions.js" charset="utf-8"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+
+	<h1>Workout Tracker</h1>
+
+	<h2>Enter Your Workout</h2>
+
+	<form name="createForm">
+		<input name="date" type="date" placeholder="Workout Date" /> <br>
+		<input name="type" type="text" placeholder="Workout Type" /> <br>
+		<input name="duration" type="text"
+			placeholder="Workout Duration (minutes)" /> <br> <input
+			name="sets" type="text" placeholder="Sets (Optional)" /> <br> <input
+			name="reps" type="text" placeholder="Reps" /> <br> <input
+			name="caloriesBurned" type="text"
+			placeholder="Calories Burned (Optional)" /> <br> <input
+			name="bodyWeight" type="text" placeholder="Body Weight (Optional))" />
+		<br> <input name="details" type="text"
+			placeholder="Details (Optional)" /> <br>
+		<button name="submit">Submit</button>
+	</form>
+
+	<div id="minutesSpent">
+		<p>Total minutes spent working out:</p>
+	</div>
+	<div id="highestReps">
+		<p>Highest amount of reps performed in one workout:</p>
+	</div>
+	<div id="highestWeight">
+		<p>Your top weight:</p>
+	</div>
+	<div id="lowestWeight">
+		<p>Your lowest weight:</p>
+	</div>
+
+	<script src="js/eventFunctions.js" charset="utf-8"></script>
+</body>
 </html>
