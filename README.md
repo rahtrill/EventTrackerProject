@@ -6,6 +6,20 @@ The purpose of this project is to properly map CRUD operations for logging worko
 
 If a user has a workout and wants to properly document the workout information and their progress, they can use this application to do so. They can create, update, and remove their workout information. A user can also search for their workout information by the type of workout that was performed, and they can search by the date the workout occurred.
 
+When a user loads into the web page, they are first met with a create workout form to add their recent workout to the database, as well as a list of their previous workouts.
+
+If a user clicks on any of the workouts in the list, it will display that workout on a new unordered list item. There are two options in that list, update and remove. If a user clicks update, an auto-populated update form will appear and will update the workout when the user hits submit. If they click remove, it will remove that workout.
+
+Every CRUD function performed on the front end of this application automatically refreshes the list of workouts and aggregated data so it is accurate to the user's recent CRUD functions without refreshing the page.
+
+Below the create a workout form, there is aggregated data displayed to the user for their benefit. The data displayed includes:
+
+- Total minutes spent working out.
+- Total calories burned.
+- The highest amount of reps performed in one workout (sets are accounted for).
+- The top weight reported by the user.
+- The lowest weight reported by the user.
+
 Here is a table that demonstrates all of the mapping that occurs in this project so far.
 
 | HTTP Verb | URI                  | Request Body | Response Body | Purpose |
