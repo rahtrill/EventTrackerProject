@@ -166,7 +166,15 @@ function createForm(e) {
 }
 
 function displayWorkout(workout) {
+	let displayDiv = document.getElementById("displayDiv");
+	let existing = document.getElementById("display");
+	
+	if (existing !== null) {
+		existing.remove();
+	}
+	
 	let ul = document.createElement("ul");
+	ul.id = "display";
 	
 	for (let att in workout) {
 		let li = document.createElement("li");
@@ -191,7 +199,7 @@ function displayWorkout(workout) {
 	});
 	ul.appendChild(li);
 	ul.appendChild(li2);
-	document.body.appendChild(ul);
+	displayDiv.appendChild(ul);
 }
 
 function displayWorkouts(workouts) {
