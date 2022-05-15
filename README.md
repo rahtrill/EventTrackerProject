@@ -2,7 +2,7 @@
 
 # Description
 
-This purpose of this project is to properly map CRUD operations for logging workout events.
+The purpose of this project is to properly map CRUD operations for logging workout events.
 
 If a user has a workout and wants to properly document the workout information and their progress, they can use this application to do so. They can create, update, and remove their workout information. A user can also search for their workout information by the type of workout that was performed, and they can search by the date the workout occurred.
 
@@ -24,6 +24,16 @@ It was a bit challenging to come up with all of the possible URIs that could occ
 
 A user might want to see all of their workouts on a particular day, so they should be able to search by date. A user might want to see all of the workouts they performed of the same type, so they should be able to search by type.
 
+Performing CRUD operations with JavaScript was a bit challenging using the event listeners. I learned that directly referring to a different function that is not an expression within an addEventListener is required for event listeners that are created within another event listener. Multiple times throughout the program, the event listeners would execute unprompted. The fix to this is to use an anonymous function and then refer to another function within that anonymous function.
+
+The syntax for this:
+
+```
+form.submit.addEventListener("click", function(){
+		updateWorkout(form,workout);
+	});
+```
+
 # Technologies Used
 
 These are all of the necessary technologies needed to make this program run:
@@ -33,6 +43,8 @@ These are all of the necessary technologies needed to make this program run:
 - Postman
 - Gradle
 - JUnit 5
+- JavaScript
+- HTML
 
 # What was the most difficult part of this project?
 
