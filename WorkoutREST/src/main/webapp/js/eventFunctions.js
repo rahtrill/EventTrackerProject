@@ -190,7 +190,7 @@ function displayWorkout(workout) {
 	
 	for (let att in workout) {
 		let li = document.createElement("li");
-		li.textContent = workout[att];
+		li.textContent = att + ": " + workout[att];
 		ul.appendChild(li);
 	}
 	let li = document.createElement("li");
