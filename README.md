@@ -59,9 +59,13 @@ These are all of the necessary technologies needed to make this program run:
 - JUnit 5
 - JavaScript
 - HTML
+- JSON
+- XML
 
 # What was the most difficult part of this project?
 
 The most difficult part of this project was creating the specific mappings for each of the functions I needed for this project.
 
 The use of services and repositories in this project were fairly easy to understand, the main REST Controller methods were hard to come up with at times, but I was able to come up with the needed mappings eventually.
+
+I also found making CRUD functions change live to the user on their webpage pretty difficult at first. It quickly snowballed into needing to call functions during each CRUD operation, but it cleared up fairly quickly after making the functions independent of the functions that previously called them when the webpage loaded.
