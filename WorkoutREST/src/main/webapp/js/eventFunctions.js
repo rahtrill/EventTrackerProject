@@ -63,6 +63,37 @@ function minutesSpent(workouts) {
 	display.textContent = "Total minutes spent working out: " + totalMinutes + " minutes";
 }
 
+function highestReps(workouts) {
+	let highestWorkout = workouts[0];
+	let highestReps = 0;
+	let display = document.getElementById("highestReps");
+	
+	if (highestWorkout.sets > 0) {
+		highestReps = (highestWorkout.sets * highestWorkout.reps);
+	} else {
+		highestReps = highestWorkout.reps;
+	}
+	
+	for (let workout of workouts) {
+		let totalReps = 0;
+		if (workout.sets > 0) {
+			totalReps = (workout.sets * workout.reps);
+		} else {
+			totalReps = workout.reps;
+		}
+		
+		if (totalReps > highestReps) {
+			highestWorkout = workout;
+			highestReps = totalReps;
+		} else if (totalReps === highestReps) {
+			highestWorkout = workout;
+			highestReps = totalReps;
+		}
+	}
+	
+	display.textContent = "Highest amount of reps performed in one workout: " + highestReps + " reps from the " + highestWorkout.type + " workout on " + highestWorkout.date;
+}
+
 function createForm(e) {
 	let form = e.target.parentElement;
 	let workout = {};
