@@ -242,7 +242,9 @@ function displayWorkouts(workouts) {
 }
 
 function updateWorkoutForm(workout) {
+	let updateDiv = document.getElementById("updateDiv");
 	let form = document.createForm.cloneNode(true);
+	form.id = "update";
 	form.date.value = workout.date;
 	form.type.value = workout.type;
 	form.duration.value = workout.duration;
@@ -251,7 +253,7 @@ function updateWorkoutForm(workout) {
 	form.caloriesBurned.value = workout.caloriesBurned;
 	form.bodyWeight.value = workout.bodyWeight;
 	form.details.value = workout.details;
-	document.body.appendChild(form);
+	updateDiv.appendChild(form);
 	form.submit.addEventListener("click", function(){
 		updateWorkout(form,workout);
 	});
@@ -290,7 +292,14 @@ function removeWorkout(id) {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 201 || xhr.status === 200) {
-				console.log("Workout has been deleted");
+				let display = document.getElementById("display");
+				display.remove();
+				let update = document.getElementById("update");
+				if (update !== null) {
+					update.remove();
+				}
+				loadAll();
+				aggregateData();
 			} else {
 				console.log("Workout not deleted");
 			}
