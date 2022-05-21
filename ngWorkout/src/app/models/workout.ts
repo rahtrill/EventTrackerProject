@@ -1,13 +1,13 @@
 export class Workout {
-  private id: number;
-  private date: string;
-  private type: string;
-  private duration: number;
-  private sets: number;
-  private reps: number;
-  private caloriesBurned: number;
-  private bodyWeight: number;
-  private details: string;
+  id: number;
+  date: string;
+  type: string;
+  duration: number;
+  sets: number;
+  reps: number;
+  caloriesBurned: number;
+  bodyWeight: number;
+  details: string;
 
   constructor(
     id: number = 0,

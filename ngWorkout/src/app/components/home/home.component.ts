@@ -8,16 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  newWorkout: Workout = new Workout();
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  addWorkout(workout: Workout) {
-    console.log(workout);
-
   }
 
 }
