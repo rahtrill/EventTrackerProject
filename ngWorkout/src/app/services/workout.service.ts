@@ -22,6 +22,15 @@ export class WorkoutService {
     );
   }
 
+  show(id: number) {
+    return this.http.get<Workout>(this.url + "/" + id).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('Could not list workout with id: ' + id);
+      })
+    );
+  }
+
   create(workout: Workout) {
     return this.http.post<Workout>(this.url, workout).pipe(
       catchError((err: any) => {
