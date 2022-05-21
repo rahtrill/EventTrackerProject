@@ -39,4 +39,14 @@ export class WorkoutService {
       })
     );
   }
+
+  update(workout: Workout, id: number) {
+    workout.id = id;
+    return this.http.post<Workout>(this.url + "/" + id, workout).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('Could not create the workout');
+      })
+    );
+  }
 }
