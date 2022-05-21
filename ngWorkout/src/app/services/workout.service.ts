@@ -14,7 +14,7 @@ export class WorkoutService {
   constructor(private http: HttpClient) { }
 
   index() {
-    return this.http.get<Workout>(this.url).pipe(
+    return this.http.get<Workout[]>(this.url).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError('Could not list all workouts');
@@ -42,7 +42,16 @@ export class WorkoutService {
 
   update(workout: Workout, id: number) {
     workout.id = id;
-    return this.http.post<Workout>(this.url + "/" + id, workout).pipe(
+    return this.http.put<Workout>(this.url + "/" + id, workout).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('Could not create the workout');
+      })
+    );
+  }
+
+  remove(id: number) {
+    return this.http.delete<boolean>(this.url + "/" + id).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError('Could not create the workout');
