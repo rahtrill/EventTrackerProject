@@ -1,3 +1,4 @@
+import { WorkoutService } from './../../services/workout.service';
 import { Component, OnInit } from '@angular/core';
 import { Workout } from 'src/app/models/workout';
 
@@ -10,13 +11,16 @@ export class CreateComponent implements OnInit {
 
   newWorkout: Workout = new Workout();
 
-  constructor() { }
+  constructor(private service: WorkoutService) { }
 
   ngOnInit(): void {
   }
 
   addWorkout(workout: Workout) {
-    console.log(workout);
+    this.service.create(workout).subscribe({
+      next: (data) => console.log(data),
+      error: (err) => console.log("Create Observable error: " + err)
+  });
   }
 
 }
