@@ -13,6 +13,15 @@ export class WorkoutService {
 
   constructor(private http: HttpClient) { }
 
+  index() {
+    return this.http.get<Workout>(this.url).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('Could not list all workouts');
+      })
+    );
+  }
+
   create(workout: Workout) {
     return this.http.post<Workout>(this.url, workout).pipe(
       catchError((err: any) => {
