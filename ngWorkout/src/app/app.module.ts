@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateComponent } from './components/create/create.component';
 import { UpdateComponent } from './components/update/update.component';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,12 @@ import { UpdateComponent } from './components/update/update.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    CommonModule
   ],
   providers: [
-    WorkoutService
+    WorkoutService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

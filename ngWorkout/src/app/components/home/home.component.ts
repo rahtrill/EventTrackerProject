@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { WorkoutService } from './../../services/workout.service';
 import { Workout } from './../../models/workout';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   workout: Workout | null = null;
 
-  constructor(private service: WorkoutService, private router: Router) { }
+  constructor(private service: WorkoutService, private router: Router, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.reload();
