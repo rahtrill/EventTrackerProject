@@ -9,12 +9,14 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateComponent } from './components/create/create.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CreateComponent
+    CreateComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

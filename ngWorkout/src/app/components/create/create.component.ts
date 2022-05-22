@@ -18,7 +18,7 @@ export class CreateComponent implements OnInit {
 
   addWorkout(workout: Workout) {
     this.service.create(workout).subscribe({
-      next: (data) => console.log(data),
+      next: (data) => {console.log(data); this.newWorkout = new Workout();},
       error: (err) => console.log("Create Observable error: " + err)
   });
   }
