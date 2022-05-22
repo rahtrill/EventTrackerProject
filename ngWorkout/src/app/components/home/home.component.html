@@ -6,13 +6,15 @@
       <th>ID</th>
       <th>Date</th>
       <th>Type</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let workout of workouts" (click)="displayWorkout(workout)">
-      <td>{{workout.id}}</td>
-      <td>{{workout.date}}</td>
-      <td>{{workout.type}}</td>
+    <tr *ngFor="let workout of workouts">
+      <td (click)="displayWorkout(workout)">{{workout.id}}</td>
+      <td (click)="displayWorkout(workout)">{{workout.date}}</td>
+      <td (click)="displayWorkout(workout)">{{workout.type}}</td>
+      <td><button (click)="removeWorkout(workout.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>

@@ -35,4 +35,11 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("/update/"+id);
   }
 
+  removeWorkout(id: number) {
+    this.service.remove(id).subscribe(
+      (success) => {console.log(success); this.reload()},
+      (error) => console.log(error)
+    )
+  }
+
 }
