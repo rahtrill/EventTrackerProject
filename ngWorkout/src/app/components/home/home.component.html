@@ -1,1 +1,33 @@
 <h1>Home Page</h1>
+
+<table *ngIf="!workout">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let workout of workouts" (click)="displayWorkout(workout)">
+      <td>{{workout.id}}</td>
+      <td>{{workout.date}}</td>
+      <td>{{workout.type}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="workout">
+  <h3>{{workout.type}} on {{workout.date}}</h3>
+
+  <p *ngIf="workout.date != null"><strong>Date: </strong>{{workout.date}}</p>
+  <p *ngIf="workout.type != null"><strong>Type: </strong>{{workout.type}}</p>
+  <p *ngIf="workout.duration != null"><strong>Duration: </strong>{{workout.duration}}</p>
+  <p *ngIf="workout.sets != null"><strong>Sets: </strong>{{workout.sets}}</p>
+  <p *ngIf="workout.reps != null"><strong>Reps: </strong>{{workout.reps}}</p>
+  <p *ngIf="workout.bodyWeight != null"><strong>Body Weight: </strong>{{workout.bodyWeight}}</p>
+  <p *ngIf="workout.caloriesBurned != null"><strong>Calories Burned: </strong>{{workout.caloriesBurned}}</p>
+  <p *ngIf="workout.details != null"><strong>Details: </strong>{{workout.details}}</p>
+  <button (click)="updateWorkout(workout.id)">Update</button>
+  <button (click)="workout = null;">Exit</button>
+</div>
