@@ -1,7 +1,11 @@
-<div *ngIf="!workout">
-  <h1>Home Page</h1>
-  <table>
-    <thead>
+<br>
+<br>
+<br>
+
+<h3 class="text-center">Your Workouts</h3>
+<div *ngIf="!workout" class="overflow-auto mx-auto border" style="width: 1000px; height: 400px;">
+  <table class="table table-striped table-hover">
+    <thead class="thead-dark">
       <tr>
         <th>ID</th>
         <th>Date</th>
@@ -18,7 +22,26 @@
       </tr>
     </tbody>
   </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div *ngIf="!workout" class="overflow-auto mx-auto border text-center" style="width: 1000px;">
+  <h3>Want to add a workout? Add one here!</h3>
+  <br>
+  <p>Tracking your workouts can help you embrace your healthy lifestyle! Take advantage of keeping track of your information and applying it to your benefit.</p>
   <button (click)="addWorkout()">Add Workout</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div *ngIf="!workout" class="overflow-auto mx-auto border text-center" style="width: 1000px;">
+  <h3>Statistics</h3>
+  <br>
+  <p>Check out your statistics! It's important to see your progress over time for self improvement!</p>
+  <button (click)="addWorkout()">Statistics</button>
 </div>
 
 
