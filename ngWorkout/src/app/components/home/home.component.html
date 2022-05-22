@@ -1,23 +1,27 @@
-<h1>Home Page</h1>
 
-<table *ngIf="!workout">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Date</th>
-      <th>Type</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let workout of workouts">
-      <td (click)="displayWorkout(workout)">{{workout.id}}</td>
-      <td (click)="displayWorkout(workout)">{{workout.date}}</td>
-      <td (click)="displayWorkout(workout)">{{workout.type}}</td>
-      <td><button (click)="removeWorkout(workout.id)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="!workout">
+  <h1>Home Page</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workout of workouts">
+        <td (click)="displayWorkout(workout)">{{workout.id}}</td>
+        <td (click)="displayWorkout(workout)">{{workout.date}}</td>
+        <td (click)="displayWorkout(workout)">{{workout.type}}</td>
+        <td><button (click)="removeWorkout(workout.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addWorkout()">Add Workout</button>
+</div>
+
 
 <div *ngIf="workout">
   <h3>{{workout.type}} on {{workout.date}}</h3>

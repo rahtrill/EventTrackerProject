@@ -42,4 +42,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  addWorkout() {
+    this.router.navigateByUrl("/create");
+  }
+
 }
