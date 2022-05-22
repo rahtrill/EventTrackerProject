@@ -26,8 +26,17 @@ export class UpdateComponent implements OnInit {
   show (id: number) {
     this.service.show(id).subscribe(
       (data) => this.editWorkout = data,
-      (error) => console.log("Observable error showing workout for editWorkout")
+      (error) => console.log("Observable error showing workout for editWorkout: " + error)
     )
+  }
+
+  updateWorkout(workout: Workout) {
+    if (this.editWorkout != null) {
+      this.service.update(workout, this.editWorkout.id).subscribe(
+        (data) => {console.log(data); this.editWorkout = null;},
+        (error) => console.log("Observable error updating workout: " + error)
+      )
+    }
   }
 
 }
