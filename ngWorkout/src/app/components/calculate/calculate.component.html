@@ -1,0 +1,49 @@
+<br />
+<br />
+<br />
+<h3 class="text-center">Calculate your calories</h3>
+<div class="overflow-auto mx-auto border" style="width: 1000px; height: 400px">
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <label for="minutes">How long was your workout? (Minutes)</label>
+        <input type="number" name="minutes" placeholder="Enter time here" [(ngModel)]="minutes">
+      </div>
+      <div class="col-sm">
+        <label for="weight">What is your current body weight? (lbs)</label>
+        <input type="number" name="weight" placeholder="Enter weight here" [(ngModel)]="weight">
+      </div>
+      <div class="col-sm">
+        <input type="radio" name="met" value=3.5 [(ngModel)]="met">
+        <label for="met">Yoga or light fitness</label>
+        <br>
+        <input type="radio" name="met" value=5 [(ngModel)]="met">
+        <label for="met">Walking</label>
+        <br>
+        <input type="radio" name="met" value=6 [(ngModel)]="met">
+        <label for="met">Weight Training (Lifting, benching, squatting, etc)</label>
+        <br>
+        <input type="radio" name="met" value=8 [(ngModel)]="met">
+        <label for="met">Swimming</label>
+        <br>
+        <input type="radio" name="met" value=8.5 [(ngModel)]="met">
+        <label for="met">Calisthenics</label>
+        <br>
+        <input type="radio" name="met" value=11 [(ngModel)]="met">
+        <label for="met">Running / Jogging</label>
+        <br>
+        <input type="radio" name="met" value=5.5 [(ngModel)]="met">
+        <label for="met">Other Activity</label>
+        <br>
+        <button name="submit" (click)="calculate()">Calculate</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <h4 class="text-center">Your calculated calories burned is {{caloriesBurned | number:'1.0'}} calories</h4>
+    </div>
+    <br>
+  </div>
+  </div>

@@ -10,12 +10,13 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateComponent } from './components/create/create.component';
 import { UpdateComponent } from './components/update/update.component';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, DecimalPipe } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterDatePipe } from './pipes/filter-date.pipe';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CalculateComponent } from './components/calculate/calculate.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     FilterPipe,
     FilterDatePipe,
     StatisticsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CalculateComponent
   ],
   imports: [
     BrowserModule,

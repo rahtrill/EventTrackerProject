@@ -1,3 +1,4 @@
+import { CalculateComponent } from './components/calculate/calculate.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { UpdateComponent } from './components/update/update.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: "create", component: CreateComponent},
   {path: "update/:id", component: UpdateComponent},
   {path: "statistics", component: StatisticsComponent},
+  {path: "calculate", component: CalculateComponent},
   {path: "**", component: NotFoundComponent}
 ];
 
