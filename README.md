@@ -6,19 +6,22 @@ The purpose of this project is to properly map CRUD operations for logging worko
 
 If a user has a workout and wants to properly document the workout information and their progress, they can use this application to do so. They can create, update, and remove their workout information. A user can also search for their workout information by the type of workout that was performed, and they can search by the date the workout occurred.
 
-When a user loads into the web page, they are first met with a create workout form to add their recent workout to the database, as well as a list of their previous workouts.
+When a user loads into the web page, they are first met with a list of their previous workouts, and options to view their statistics or adding another workout. These options are also included in the navigation bar.
 
 If a user clicks on any of the workouts in the list, it will display that workout on a new unordered list item. There are two options in that list, update and remove. If a user clicks update, an auto-populated update form will appear and will update the workout when the user hits submit. If they click remove, it will remove that workout.
 
 Every CRUD function performed on the front end of this application automatically refreshes the list of workouts and aggregated data so it is accurate to the user's recent CRUD functions without refreshing the page.
 
-Below the create a workout form, there is aggregated data displayed to the user for their benefit. The data displayed includes:
+There is a statistics page that displays the user's overall statistics in relation to their previous workouts. This page displays:
 
-- Total minutes spent working out.
-- Total calories burned.
-- The highest amount of reps performed in one workout (sets are accounted for).
-- The top weight reported by the user.
-- The lowest weight reported by the user.
+- Their highest recorded body weight.
+- Their lowest recorded body weight.
+- Their highest recorded calories burned.
+- Their lowest recorded calories burned.
+- Their highest recorded reps performed in one workout (including sets).
+- Their lowest recorded reps performed in one workout (including sets).
+
+A user can calculate the amount of calories burned using the "Calorie Calculator" page. This page takes the duration of their workout, their body weight, and what kind of activity they were performing. It will then accurately calculate the amount of calories burned. If a user doesn't know how many calories they burned and want to log that in their workout, they can use this calculator.
 
 Here is a table that demonstrates all of the mapping that occurs in this project so far.
 
@@ -58,9 +61,14 @@ These are all of the necessary technologies needed to make this program run:
 - Gradle
 - JUnit 5
 - JavaScript
+- Java
 - HTML
 - JSON
 - XML
+- Angular
+- TypeScript
+- Bootstrap
+- HTTP
 
 # What was the most difficult part of this project?
 
