@@ -12,6 +12,10 @@ import { CreateComponent } from './components/create/create.component';
 import { UpdateComponent } from './components/update/update.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FilterDatePipe } from './pipes/filter-date.pipe';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HomeComponent,
     CreateComponent,
     UpdateComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterPipe,
+    FilterDatePipe,
+    StatisticsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

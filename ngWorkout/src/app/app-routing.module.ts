@@ -1,3 +1,5 @@
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 import { UpdateComponent } from './components/update/update.component';
 import { CreateComponent } from './components/create/create.component';
 import { NgModule } from '@angular/core';
@@ -7,7 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "create", component: CreateComponent},
-  {path: "update/:id", component: UpdateComponent}
+  {path: "update/:id", component: UpdateComponent},
+  {path: "statistics", component: StatisticsComponent},
+  {path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({

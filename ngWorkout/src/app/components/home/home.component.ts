@@ -1,8 +1,10 @@
+import { FilterPipe } from './../../pipes/filter.pipe';
 import { DatePipe } from '@angular/common';
 import { WorkoutService } from './../../services/workout.service';
 import { Workout } from './../../models/workout';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +16,8 @@ export class HomeComponent implements OnInit {
   workouts: Workout[] = [];
 
   workout: Workout | null = null;
+  filtered: string = "";
+  filteredDate: string = "";
 
   constructor(private service: WorkoutService, private router: Router, private datePipe: DatePipe) { }
 
