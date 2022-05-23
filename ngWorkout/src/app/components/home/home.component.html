@@ -50,9 +50,34 @@
   <h3>Statistics</h3>
   <br>
   <p>Check out your statistics! It's important to see your progress over time for self improvement!</p>
-  <button (click)="addWorkout()">Statistics</button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+    View Statistics
+  </button>
+  <br>
+  <br>
+<div class="collapse" id="collapseExample2">
+    <app-statistics></app-statistics>
+    <br>
 </div>
-
+</div>
+<br *ngIf="!workout">
+<br *ngIf="!workout">
+<br *ngIf="!workout">
+<br *ngIf="!workout">
+<div *ngIf="!workout" class="overflow-auto mx-auto border text-center" style="width: 1000px;">
+  <h3>Calculate Calories</h3>
+  <br>
+  <p>Not sure how many calories you burned during your workout? Find out here with the calorie calculator!</p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+    Calorie Calculator
+  </button>
+  <br>
+  <br>
+<div class="collapse" id="collapseExample3">
+    <app-calculate></app-calculate>
+    <br>
+</div>
+</div>
 
 <div *ngIf="workout">
   <h3>{{workout.type}} on {{workout.date | date:'mediumDate'}}</h3>
